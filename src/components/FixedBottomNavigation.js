@@ -1,9 +1,7 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import RestoreIcon from "@mui/icons-material/Restore";
 import { Link } from "react-router-dom";
+import { Box, BottomNavigation, BottomNavigationAction } from "@mui/material";
 
 export default function FixedBottomNavigation() {
   const [selected, setSelected] = React.useState("introduction");
