@@ -8,37 +8,36 @@ import {
   CardContent,
   CardMedia,
   Box,
-  Container,
 } from "@mui/material";
 import ai from "../../assets/ai.jpg";
 import git from "../../assets/git.png";
+import lessonLearnt from "../../assets/lessonsLearnt.jpg";
+import mazeRunner from "../../assets/mazeRunner.png";
+import myDigitSpan from "../../assets/myDigitSpan.jpeg";
+import myEventBrite from "../../assets/myEventBrite.jpeg";
 
 const projectList = [
   {
     title: "Maze Runner",
     description: "A Java project",
-    image:
-      "https://github.com/brandontanzhirong/MazeRunner/raw/master/screenshots/Maze.png",
+    image: mazeRunner,
   },
   {
     title: "MyEventBrite",
     description:
       "An android apps for monitoring a private event where each valid person can only have one ticket.",
-    image:
-      "https://github.com/brandontanzhirong/MyEventBrite/raw/master/screenshots/Attending.jpeg",
+    image: myEventBrite,
   },
   {
     title: "My Digit Span",
     description: "Flutter Apps for Digit Span",
-    image:
-      "https://github.com/brandontanzhirong/My_Digit_Span/raw/master/Screenshots/Home%20Page.jpeg",
+    image: myDigitSpan,
   },
   {
     title: "Self Enrichment App",
     description:
       "An android App that helps people to improve mentally and physically",
-    image:
-      "https://github.com/brandontanzhirong/Self-Enrichment_App/raw/master/screenshots/lessonsLearnt.jpg",
+    image: lessonLearnt,
   },
   {
     title: "Bond Price Forecasting",
@@ -140,20 +139,23 @@ const CustomCard = ({ image, title, description }) => {
 
 export default React.memo(function Projects() {
   return (
-    <Grid container>
-      <Grid item xs={2}></Grid>
-      <Grid xs={8} justifyContent="center" container item spacing={4}>
-        {projectList.map((project) => (
-          <Grid item>
-            <CustomCard
-              title={project.title}
-              description={project.description}
-              image={project.image}
-            />
-          </Grid>
-        ))}
+    <section id="projects">
+      <h2>Projects</h2>
+      <Grid container>
+        <Grid item xs={2}></Grid>
+        <Grid xs={8} justifyContent="center" container item spacing={4}>
+          {projectList.map((project) => (
+            <Grid item>
+              <CustomCard
+                title={project.title}
+                description={project.description}
+                image={project.image}
+              />
+            </Grid>
+          ))}
+        </Grid>
+        <Grid item xs={2}></Grid>
       </Grid>
-      <Grid item xs={2}></Grid>
-    </Grid>
+    </section>
   );
 });

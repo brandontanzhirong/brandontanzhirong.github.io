@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Accomplisments() {
   return (
-    <div>
+    <section id="acheivements">
       <h2>Accomplisments</h2>
-    </div>
+    </section>
   );
 }

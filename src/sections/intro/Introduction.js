@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Introduction() {
   return (
-    <div>
+    <section id="introduction">
       <h2>Introduction</h2>
-    </div>
+    </section>
   );
 }

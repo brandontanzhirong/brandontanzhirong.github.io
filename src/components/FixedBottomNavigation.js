@@ -31,9 +31,9 @@ export default function FixedBottomNavigation() {
         />
         <BottomNavigationAction
           component={Link}
-          to="/timelines"
-          label="Timelines"
-          value="timelines"
+          to="/timeline"
+          label="Timeline"
+          value="timeline"
           icon={<RestoreIcon />}
         />
         <BottomNavigationAction

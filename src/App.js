@@ -1,27 +1,21 @@
 import "./App.css";
-import FixedBottomNavigation from "./components/FixedBottomNavigation";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Introduction from "./pages/intro/Introduction";
-import Projects from "./pages/projects/Projects";
-import Timelines from "./pages/timelines/Timelines";
-import ContactMe from "./pages/contact_me/ContactMe";
-import Acheivements from "./pages/acheivements/Acheivements";
+import Introduction from "./sections/intro/Introduction";
+import Projects from "./sections/projects/Projects";
+import CustomTimeline from "./sections/timeline/CustomTimeline";
+import ContactMe from "./sections/contact_me/ContactMe";
+import Acheivements from "./sections/acheivements/Acheivements";
+import Navbar from "./components/Navbar";
 
-function App() {
+function App(props) {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Introduction />}></Route>
-          <Route path="/introduction" element={<Introduction />}></Route>
-          <Route path="/projects" element={<Projects />}></Route>
-          <Route path="/timelines" element={<Timelines />}></Route>
-          <Route path="/acheivements" element={<Acheivements />}></Route>
-          <Route path="/contact-me" element={<ContactMe />}></Route>
-        </Routes>
-        <FixedBottomNavigation />
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <Navbar />
+      <Introduction />
+      <Projects />
+      <CustomTimeline />
+      <Acheivements />
+      <ContactMe />
+    </div>
   );
 }
 
