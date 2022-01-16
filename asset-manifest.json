@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.2ca66c82.js",
+    "main.js": "/static/js/main.72ed9725.js",
     "static/js/787.86e70ff7.chunk.js": "/static/js/787.86e70ff7.chunk.js",
     "static/media/mazeRunner.png": "/static/media/mazeRunner.afe2683cdb632b502fff.png",
     "static/media/lessonsLearnt.jpg": "/static/media/lessonsLearnt.d0268c398220543b216b.jpg",
@@ -10,11 +10,11 @@
     "static/media/myDigitSpan.jpeg": "/static/media/myDigitSpan.b42ebb9eba460a01ae13.jpeg",
     "index.html": "/index.html",
     "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.2ca66c82.js.map": "/static/js/main.2ca66c82.js.map",
+    "main.72ed9725.js.map": "/static/js/main.72ed9725.js.map",
     "787.86e70ff7.chunk.js.map": "/static/js/787.86e70ff7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.2ca66c82.js"
+    "static/js/main.72ed9725.js"
   ]
 }
