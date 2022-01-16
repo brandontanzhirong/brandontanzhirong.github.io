@@ -9,12 +9,12 @@ import {
   CardMedia,
   Box,
 } from "@mui/material";
-import ai from "../../assets/ai.jpg";
-import git from "../../assets/git.png";
-import lessonLearnt from "../../assets/lessonsLearnt.jpg";
-import mazeRunner from "../../assets/mazeRunner.png";
-import myDigitSpan from "../../assets/myDigitSpan.jpeg";
-import myEventBrite from "../../assets/myEventBrite.jpeg";
+import ai from "../../../assets/ai.jpg";
+import git from "../../../assets/git.png";
+import lessonLearnt from "../../../assets/lessonsLearnt.jpg";
+import mazeRunner from "../../../assets/mazeRunner.png";
+import myDigitSpan from "../../../assets/myDigitSpan.jpeg";
+import myEventBrite from "../../../assets/myEventBrite.jpeg";
 
 const projectList = [
   {
@@ -96,10 +96,10 @@ const CustomCard = ({ image, title, description }) => {
         >
           <Typography
             sx={{
-              fontFamily: "Keania One",
               fontSize: 20,
               color: "#fff",
               textTransform: "uppercase",
+              fontWeight: "bold",
             }}
             variant={"h2"}
           >
@@ -107,7 +107,6 @@ const CustomCard = ({ image, title, description }) => {
           </Typography>
           <Typography
             sx={{
-              fontFamily: "Montserrat",
               color: "#fff",
               opacity: 0.87,
               marginTop: "0.2rem",
@@ -139,7 +138,7 @@ const CustomCard = ({ image, title, description }) => {
 
 export default React.memo(function Projects() {
   return (
-    <section id="projects">
+    <Box id="projects" component="section" sx={{ height: "100vh" }}>
       <h2>Projects</h2>
       <Grid container>
         <Grid item xs={2}></Grid>
@@ -156,6 +155,6 @@ export default React.memo(function Projects() {
         </Grid>
         <Grid item xs={2}></Grid>
       </Grid>
-    </section>
+    </Box>
   );
 });

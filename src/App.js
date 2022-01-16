@@ -1,20 +1,44 @@
 import "./App.css";
-import Introduction from "./sections/intro/Introduction";
-import Projects from "./sections/projects/Projects";
-import CustomTimeline from "./sections/timeline/CustomTimeline";
-import ContactMe from "./sections/contact_me/ContactMe";
-import Acheivements from "./sections/acheivements/Acheivements";
-import Navbar from "./components/Navbar";
+import Home from "./components/sections/home/Home";
+import Projects from "./components/sections/projects/Projects";
+import CustomTimeline from "./components/sections/timeline/CustomTimeline";
+import ContactMe from "./components/sections/contact_me/ContactMe";
+import Acheivements from "./components/sections/acheivements/Acheivements";
+import {
+  createTheme,
+  ThemeProvider,
+  responsiveFontSizes,
+  CssBaseline,
+} from "@mui/material";
 
-function App(props) {
+let theme = createTheme({
+  typography: {
+    fontFamily: ["Poppins", "sans-serif"].join(","),
+    h1: { fontSize: "3.5em" },
+    h2: { fontSize: "2em" },
+    h3: { fontSize: "1.3em" },
+    h4: { fontSize: "1em" },
+    h5: { fontSize: "1em" },
+    h6: { fontSize: "1em" },
+    subtitle1: { fontSize: "0.9em" },
+    subtitle2: { fontSize: "1em" },
+    body1: { fontSize: "1em" },
+    body2: { fontSize: "1em" },
+  },
+});
+theme = responsiveFontSizes(theme);
+
+function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Introduction />
-      <Projects />
-      <CustomTimeline />
-      <Acheivements />
-      <ContactMe />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Home />
+        <Projects />
+        <CustomTimeline />
+        <Acheivements />
+        <ContactMe />
+      </ThemeProvider>
     </div>
   );
 }

@@ -9,6 +9,7 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import WorkTwoToneIcon from "@mui/icons-material/WorkTwoTone";
 import MenuBookTwoToneIcon from "@mui/icons-material/MenuBookTwoTone";
 import Typography from "@mui/material/Typography";
+import { Box } from "@mui/material";
 
 const steps = [
   {
@@ -115,7 +116,7 @@ const CustomTimelineItem = ({
 
 export default function CustomTimeline() {
   return (
-    <section id="timeline">
+    <Box id="timeline" component="section">
       <h2>Timeline</h2>
       <Timeline>
         {steps.map((step) => (
@@ -129,6 +130,6 @@ export default function CustomTimeline() {
           ></CustomTimelineItem>
         ))}
       </Timeline>
-    </section>
+    </Box>
   );
 }
