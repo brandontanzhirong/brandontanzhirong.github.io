@@ -4,7 +4,6 @@ import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import WorkTwoToneIcon from "@mui/icons-material/WorkTwoTone";
 import MenuBookTwoToneIcon from "@mui/icons-material/MenuBookTwoTone";
@@ -84,14 +83,6 @@ const CustomTimelineItem = ({
 }) => {
   return (
     <TimelineItem>
-      <TimelineOppositeContent
-        sx={{ m: "auto 0" }}
-        align="right"
-        variant="body2"
-        color="text.secondary"
-      >
-        {startDate} - {endDate}
-      </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineConnector />
         <TimelineDot>
@@ -102,6 +93,7 @@ const CustomTimelineItem = ({
       <TimelineContent sx={{ py: "12px", px: 2 }}>
         <Typography variant="h6" component="span" fontWeight="bold">
           {title}
+          {startDate} - {endDate}
         </Typography>
         <Typography variant="subtitle1" gutterBottom={true}>
           {place}

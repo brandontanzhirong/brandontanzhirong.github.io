@@ -1,6 +1,19 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Button, Container, keyframes, Typography } from "@mui/material";
 import React from "react";
 import Navbar from "../../Navbar";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+
+const oscillate = keyframes`
+  0% {
+    transform: rotate(90deg) translateX(0);
+  }
+  50% {
+    transform: rotate(90deg) translateX(-40%);
+  }
+  100% {
+    transform: rotate(90deg) translateX(0);
+  }
+`;
 
 export default function Home() {
   return (
@@ -28,7 +41,6 @@ export default function Home() {
           variant="h1"
           color="inherit"
           sx={{
-            textTransform: "uppercase",
             fontWeight: "200",
           }}
         >
@@ -75,6 +87,20 @@ export default function Home() {
           Certified Solutions Architect – Associate exam.
         </Typography>
       </Container>
+      <Button
+        href="#projects"
+        color="inherit"
+        sx={{ marginBottom: "3%", fontSize: "3em" }}
+      >
+        <ArrowForwardIosRoundedIcon
+          fontSize="inherit"
+          color="inherit"
+          sx={{
+            transform: "rotate(90deg)",
+            animation: `${oscillate} 1s infinite ease`,
+          }}
+        />
+      </Button>
     </Box>
   );
 }
