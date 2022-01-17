@@ -18,8 +18,9 @@ const steps = [
     isEducation: false,
     startDate: "Jul 2020",
     endDate: "Jan 2021",
-    description: `•  Utilize a pre-trained SSD-MobileNet model to detect theft action in the CCTV footage
-    • Utilize several AWS services to complete the task using Python as the Programming Language such as:
+    description: `Theft Detection in a CCTV footage with a pre-trained MobileNet SSD model
+    People counter in a shop in a day by detecting people with pre-trained MobileNet SSD model and tracking them using correlation filter and centroid tracking
+    Utilize several AWS services to complete the task using Python as the Programming Language such as:
     ➼ ECS (Elastic Container Service), ELB (Elastic Load Balancer) and API Gateway to be able to run the code with 0 Cold Start time
     ➼ S3, AWS Glue and AWS Firehose to able to query the log using AWS Athena
     ➼ AWS EC2 and AWS X-Ray to run the cron job (batch job)
@@ -32,8 +33,8 @@ const steps = [
     isEducation: false,
     startDate: "Sep 2019",
     endDate: "Jun 2020",
-    description: `• Explain the lab questions to the students 
-    • Provide guidance to students when they need help`,
+    description: `Explain the lab questions to the students 
+    Provide guidance to students when they need help`,
   },
   {
     title: "Bachelor of Computer Science (Artificial Intelligence)",
@@ -42,15 +43,15 @@ const steps = [
     isEducation: true,
     startDate: "Sep 2018",
     endDate: "Feb 2022",
-    description: `• International Student Centre Global Buddies (Committee)
-    ➼ facilitate exchange students by guiding and helping them throughout their semester in UM
-    ➼ facilitator for ASTW 2019 (short term exchange program in UM)
+    description: `International Student Centre Global Buddies (Committee)
+    ➼ Facilitate exchange students by guiding and helping them throughout their semester in UM
+    ➼ Facilitator for ASTW 2019 (short term exchange program in UM)
     ➼ In charge of Annual Gala Dinner Registration
     ➼ General Affair for Exchange Students Orientation  
-    • Teaching Assistant for Fundamental of Programming and Data Structure
-    • Volleyball (4th Place in intra-university)
-    • Dayao UM (Multech)
-    • Pesta Tanglung UM (Multimedia)`,
+    Teaching Assistant for Fundamental of Programming and Data Structure
+    Volleyball (4th Place in intra-university)
+    Dayao UM (Multech)
+    Pesta Tanglung UM (Multimedia)`,
   },
   {
     title: "Local Matriculation (Science Stream)",
@@ -59,11 +60,11 @@ const steps = [
     isEducation: true,
     startDate: "2017",
     endDate: "2018",
-    description: `• Volleyball (Team Captain & 3rd place in inter-college competition)
-    • Class monitor
-    • Assistant head of Block A first floor 
-    • Fun Fair Drinks Department
-    • Performer (Wushu)`,
+    description: `Volleyball (Team Captain & 3rd place in inter-college competition)
+    Class monitor
+    Assistant head of Block A first floor 
+    Fun Fair Drinks Department
+    Performer (Wushu)`,
   },
   {
     title: "SPM (Science Stream)",
@@ -72,9 +73,9 @@ const steps = [
     isEducation: true,
     startDate: "2011",
     endDate: "2016",
-    description: `• Red Crescent Society - Vice President
-    • Red Crescent Camp - Organizer
-    • Green House Marching - Commander`,
+    description: `Red Crescent Society - Vice President
+    Red Crescent Camp - Organizer
+    Green House Marching - Commander`,
   },
 ];
 
@@ -104,7 +105,7 @@ const CustomTimelineItem = ({
             <Typography variant="h5" component="span" fontWeight="700">
               {title}
             </Typography>
-            <Typography variant="subtitle1" sx={{ fontWeight: "600", }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: "600" }}>
               {result}
             </Typography>
             <Typography variant="subtitle1" sx={{ fontWeight: "500" }}>
@@ -118,11 +119,21 @@ const CustomTimelineItem = ({
             </Typography>
           </Container>
           <Container sx={{ flex: 2 }}>
-            {description.split("\n").map((line) => (
-              <Typography variant="body1" sx={{ fontWeight: "500" }}>
-                {line}
-              </Typography>
-            ))}
+            <ul>
+              {description.split("\n").map((line) =>
+                !line.includes("➼") ? (
+                  <li>
+                    <Typography variant="body1" sx={{ fontWeight: "500" }}>
+                      {line}
+                    </Typography>
+                  </li>
+                ) : (
+                  <Typography variant="body1" sx={{ fontWeight: "500" }}>
+                    {line}
+                  </Typography>
+                )
+              )}
+            </ul>
           </Container>
         </Stack>
       </TimelineContent>
