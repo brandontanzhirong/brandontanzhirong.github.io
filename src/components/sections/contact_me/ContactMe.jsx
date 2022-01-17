@@ -16,9 +16,10 @@ export default function ContactMe() {
         color: "#FFFFFF",
         height: "15vh",
         justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <Typography variant="h3" sx={{ paddingBottom: "1%" }}>
+      <Typography variant="h4" sx={{ paddingBottom: "0.5%" }}>
         Feel free to connect with me
       </Typography>
       <Stack direction="row" justifyContent="center" alignItems="center">

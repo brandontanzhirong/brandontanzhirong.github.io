@@ -54,6 +54,7 @@ export default function Navbar() {
         position="fixed"
         sx={{
           backgroundColor: "#000000",
+          height: "65px",
           zIndex: (theme) => theme.zIndex.drawer + 1,
         }}
       >

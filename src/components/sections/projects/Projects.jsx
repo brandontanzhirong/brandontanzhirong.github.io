@@ -8,6 +8,7 @@ import {
   CardContent,
   CardMedia,
   Box,
+  Container,
 } from "@mui/material";
 import ai from "../../../assets/ai.jpg";
 import git from "../../../assets/git.png";
@@ -15,6 +16,12 @@ import lessonLearnt from "../../../assets/lessonsLearnt.jpg";
 import mazeRunner from "../../../assets/mazeRunner.png";
 import myDigitSpan from "../../../assets/myDigitSpan.jpeg";
 import myEventBrite from "../../../assets/myEventBrite.jpeg";
+import { useTheme } from "@mui/material/styles";
+import MobileStepper from "@mui/material/MobileStepper";
+import Paper from "@mui/material/Paper";
+import Button from "@mui/material/Button";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 
 const projectList = [
   {
@@ -136,25 +143,116 @@ const CustomCard = ({ image, title, description }) => {
   );
 };
 
-export default React.memo(function Projects() {
+// export default React.memo(function Projects() {
+//   return (
+//     <Box id="projects" component="section" sx={{ height: "100vh" }}>
+//       <h2>Projects</h2>
+//       <Grid container>
+//         <Grid item xs={2}></Grid>
+//         <Grid xs={8} justifyContent="center" container item spacing={4}>
+//           {projectList.map((project) => (
+//             <Grid item>
+//               <CustomCard
+//                 title={project.title}
+//                 description={project.description}
+//                 image={project.image}
+//               />
+//             </Grid>
+//           ))}
+//         </Grid>
+//         <Grid item xs={2}></Grid>
+//       </Grid>
+//     </Box>
+//   );
+// });
+
+const steps = [
+  {
+    label: "Select campaign settings",
+    description: `For each ad campaign that you create, you can control how much
+              you're willing to spend on clicks and conversions, which networks
+              and geographical locations you want your ads to show on, and more.`,
+  },
+  {
+    label: "Create an ad group",
+    description:
+      "An ad group contains one or more ads which target a shared set of keywords.",
+  },
+  {
+    label: "Create an ad",
+    description: `Try out different ad text to see what brings in the most customers,
+              and learn how to enhance your ads using features like ad extensions.
+              If you run into any problems with your ads, find out how to tell if
+              they're running and how to resolve approval issues.`,
+  },
+];
+
+export default function Projects() {
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = React.useState(0);
+  const maxSteps = steps.length;
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
   return (
-    <Box id="projects" component="section" sx={{ height: "100vh" }}>
-      <h2>Projects</h2>
-      <Grid container>
-        <Grid item xs={2}></Grid>
-        <Grid xs={8} justifyContent="center" container item spacing={4}>
-          {projectList.map((project) => (
-            <Grid item>
-              <CustomCard
-                title={project.title}
-                description={project.description}
-                image={project.image}
-              />
-            </Grid>
-          ))}
+    <Container id="projects" component="section" sx={{ width: "70%" }}>
+      <Box>
+        <h2>Projects</h2>
+        <Grid container>
+          <Grid item xs={2}></Grid>
+          <Grid xs={8} justifyContent="center" container item spacing={4}>
+            {projectList.map(
+              (project, index) =>
+                Math.floor(index / 2) === activeStep && (
+                  <Grid item>
+                    <CustomCard
+                      title={project.title}
+                      description={project.description}
+                      image={project.image}
+                    />
+                  </Grid>
+                )
+            )}
+          </Grid>
+          <Grid item xs={2}></Grid>
         </Grid>
-        <Grid item xs={2}></Grid>
-      </Grid>
-    </Box>
+      </Box>
+      <MobileStepper
+        variant="text"
+        steps={maxSteps}
+        position="static"
+        activeStep={activeStep}
+        nextButton={
+          <Button
+            size="small"
+            onClick={handleNext}
+            disabled={activeStep === maxSteps - 1}
+          >
+            Next
+            {theme.direction === "rtl" ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )}
+          </Button>
+        }
+        backButton={
+          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+            {theme.direction === "rtl" ? (
+              <KeyboardArrowRight />
+            ) : (
+              <KeyboardArrowLeft />
+            )}
+            Back
+          </Button>
+        }
+      />
+    </Container>
   );
-});
+}

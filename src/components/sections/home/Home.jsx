@@ -80,11 +80,10 @@ export default function Home() {
             mx: { xs: 0, sm: "10%" },
           }}
         >
-          Computer Science (Artificial Intelligence) final year undergraduate
-          with a current CGPA of 3.98 passionate about data science and machine
-          learning. Experienced in AWS Cloud Services, had an internship in a
-          fast-paced AWS Advanced Consulting Partner company and passed AWS
-          Certified Solutions Architect – Associate exam.
+          A student with a current CGPA of 3.98 passionate about data science
+          and machine learning. Experienced in AWS Cloud Services, had an
+          internship in a fast-paced AWS Advanced Consulting Partner company and
+          passed AWS Certified Solutions Architect – Associate exam.
         </Typography>
       </Container>
       <Button
