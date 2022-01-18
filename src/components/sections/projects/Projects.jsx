@@ -6,64 +6,70 @@ import {
   CardActionArea,
   Card,
   CardContent,
-  CardMedia,
   Box,
   Container,
 } from "@mui/material";
-import ai from "../../../assets/ai.jpg";
-import git from "../../../assets/git.png";
-import lessonLearnt from "../../../assets/lessonsLearnt.jpg";
-import mazeRunner from "../../../assets/mazeRunner.png";
-import myDigitSpan from "../../../assets/myDigitSpan.jpeg";
-import myEventBrite from "../../../assets/myEventBrite.jpeg";
 import { useTheme } from "@mui/material/styles";
 import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import TechStackSelection from "./TechStackSelection";
 
 const projectList = [
   {
     title: "Maze Runner",
     description: "A Java project",
-    image: mazeRunner,
+    techStack: ["Java"],
   },
   {
     title: "MyEventBrite",
     description:
       "An android apps for monitoring a private event where each valid person can only have one ticket.",
-    image: myEventBrite,
+    techStack: ["Android", "Firestore", "Kotlin"],
   },
   {
     title: "My Digit Span",
     description: "Flutter Apps for Digit Span",
-    image: myDigitSpan,
+    techStack: ["Flutter", "Dart", "Mobile App"],
   },
   {
     title: "Self Enrichment App",
     description:
       "An android App that helps people to improve mentally and physically",
-    image: lessonLearnt,
+    techStack: ["Flutter", "Dart", "Mobile App"],
   },
   {
     title: "Bond Price Forecasting",
     description: "Forcast next month's bond price given current month details",
-    image: ai,
+    techStack: [
+      "Finance",
+      "Deep Learning",
+      "Microsoft Azure AutoML",
+      "PowerBI",
+    ],
   },
   {
     title: "NotGit",
     description: "It is a clone of Git",
-    image: git,
+    techStack: ["Java"],
   },
 ];
 
-const CustomCard = ({ image, title, description }) => {
+let filteredTechStacks = {};
+for (let i = 0; i < projectList.length; i++) {
+  for (let j = 0; j < projectList[i].techStack.length; j++) {
+    filteredTechStacks[projectList[i].techStack[j]] = false;
+  }
+}
+filteredTechStacks["Java"] = true;
+
+const CustomCard = ({ title, description }) => {
   return (
     <CardActionArea
       sx={{
         width: "100%",
-        borderRadius: 16,
+        borderRadius: "1.5rem",
         transition: "0.2s",
         "&:hover": {
           transform: "scale(1.1)",
@@ -74,9 +80,8 @@ const CustomCard = ({ image, title, description }) => {
     >
       <Card
         sx={{
-          width: 270,
-          height: 300,
-          borderRadius: 16,
+          width: "100%",
+          height: "200px",
           boxShadow: "none",
           "&:hover": {
             boxShadow: `0 6px 12px 0 ${Color("#203f52")
@@ -86,38 +91,29 @@ const CustomCard = ({ image, title, description }) => {
           },
         }}
       >
-        <CardMedia
-          sx={{
-            width: "100%",
-            height: 0,
-            paddingBottom: "65%",
-            backgroundColor: "rgba(0, 0, 0, 0.08)",
-          }}
-          image={image}
-        />
         <CardContent
           sx={{
             backgroundColor: "#203f52",
             height: "100%",
+            textAlign: "left",
+            p: "15%",
           }}
         >
           <Typography
             sx={{
-              fontSize: 20,
               color: "#fff",
               textTransform: "uppercase",
               fontWeight: "bold",
             }}
-            variant={"h2"}
+            variant={"h3"}
           >
             {title}
           </Typography>
           <Typography
+            variant={"subtitle1"}
             sx={{
               color: "#fff",
-              opacity: 0.87,
               marginTop: "0.2rem",
-              fontSize: 14,
             }}
           >
             {description}
@@ -143,54 +139,28 @@ const CustomCard = ({ image, title, description }) => {
   );
 };
 
-// export default React.memo(function Projects() {
-//   return (
-//     <Box id="projects" component="section" sx={{ height: "100vh" }}>
-//       <h2>Projects</h2>
-//       <Grid container>
-//         <Grid item xs={2}></Grid>
-//         <Grid xs={8} justifyContent="center" container item spacing={4}>
-//           {projectList.map((project) => (
-//             <Grid item>
-//               <CustomCard
-//                 title={project.title}
-//                 description={project.description}
-//                 image={project.image}
-//               />
-//             </Grid>
-//           ))}
-//         </Grid>
-//         <Grid item xs={2}></Grid>
-//       </Grid>
-//     </Box>
-//   );
-// });
+function filterProjectList(projectList, filteredTechStacks) {
+  let filteredProjectList = [];
+  filteredTechStacks = Object.keys(filteredTechStacks).filter(
+    (label) => filteredTechStacks[label]
+  );
+  for (let i = 0; i < projectList.length; i++) {
+    if (
+      filteredTechStacks.every((val) => projectList[i].techStack.includes(val))
+    ) {
+      filteredProjectList.push(projectList[i]);
+    }
+  }
 
-const steps = [
-  {
-    label: "Select campaign settings",
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
-  },
-  {
-    label: "Create an ad group",
-    description:
-      "An ad group contains one or more ads which target a shared set of keywords.",
-  },
-  {
-    label: "Create an ad",
-    description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
-  },
-];
+  return filteredProjectList;
+}
 
 export default function Projects() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = steps.length;
+  const maxSteps = Math.ceil(projectList.length / 4);
+  const [chipData, setChipData] = React.useState(filteredTechStacks);
+  const filteredProjects = filterProjectList(projectList, chipData);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -201,30 +171,55 @@ export default function Projects() {
   };
 
   return (
-    <Container id="projects" component="section" sx={{ width: "70%" }}>
+    <Container id="projects" component="section" sx={{ width: { md: "65%" } }}>
       <Box>
-        <h2>Projects</h2>
-        <Grid container>
-          <Grid item xs={2}></Grid>
-          <Grid xs={8} justifyContent="center" container item spacing={4}>
-            {projectList.map(
-              (project, index) =>
-                Math.floor(index / 2) === activeStep && (
-                  <Grid item>
-                    <CustomCard
-                      title={project.title}
-                      description={project.description}
-                      image={project.image}
-                    />
-                  </Grid>
-                )
-            )}
-          </Grid>
-          <Grid item xs={2}></Grid>
+        <Typography variant="h2" sx={{ margin: "1em", fontWeight: 700 }}>
+          Projects
+        </Typography>
+        <TechStackSelection
+          chipData={chipData}
+          setChipData={setChipData}
+          isFilteredChips={false}
+        />
+        <br />
+        <Typography variant="h5" sx={{ textAlign: "left" }}>
+          Showing projects filtered by:
+        </Typography>
+        <TechStackSelection
+          chipData={chipData}
+          setChipData={setChipData}
+          isFilteredChips={true}
+        />
+        <br />
+
+        <Grid
+          justifyContent="left"
+          alignContent="center"
+          container
+          spacing={4}
+          sx={{ flexDirection: { xs: "column", md: "row" } }}
+        >
+          {filteredProjects.map(
+            (project, index) =>
+              Math.floor(index / 4) === activeStep && (
+                <Grid
+                  item
+                  md={3}
+                  key={project.title}
+                  sx={{ width: { xs: "65%", md: "100%" } }}
+                >
+                  <CustomCard
+                    title={project.title}
+                    description={project.description}
+                  />
+                </Grid>
+              )
+          )}
         </Grid>
       </Box>
+      <br />
       <MobileStepper
-        variant="text"
+        sx={{ backgroundColor: "transparent" }}
         steps={maxSteps}
         position="static"
         activeStep={activeStep}

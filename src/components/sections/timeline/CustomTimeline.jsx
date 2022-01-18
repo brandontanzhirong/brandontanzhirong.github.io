@@ -99,8 +99,8 @@ const CustomTimelineItem = ({
         </TimelineDot>
         <TimelineConnector sx={{ backgroundColor: "#000000", width: "1px" }} />
       </TimelineSeparator>
-      <TimelineContent sx={{ py: "12px", px: 2 }}>
-        <Stack direction="row">
+      <TimelineContent sx={{ py: "12px", px: 0 }}>
+        <Stack direction={{ xs: "column", md: "row" }}>
           <Container sx={{ flex: 1 }}>
             <Typography variant="h5" component="span" fontWeight="700">
               {title}
@@ -123,12 +123,12 @@ const CustomTimelineItem = ({
               {description.split("\n").map((line) =>
                 !line.includes("➼") ? (
                   <li>
-                    <Typography variant="body1" sx={{ fontWeight: "500" }}>
+                    <Typography variant="subtitle1" sx={{ fontWeight: "500" }}>
                       {line}
                     </Typography>
                   </li>
                 ) : (
-                  <Typography variant="body1" sx={{ fontWeight: "500" }}>
+                  <Typography variant="subtitle1" sx={{ fontWeight: "500" }}>
                     {line}
                   </Typography>
                 )
@@ -143,11 +143,11 @@ const CustomTimelineItem = ({
 
 export default function CustomTimeline() {
   return (
-    <Container id="timeline" component="section">
-      <Typography variant="h2" sx={{ margin: "10px", fontWeight: 700 }}>
+    <Container id="timeline" component="section" sx={{ padding: 0 }}>
+      <Typography variant="h2" sx={{ margin: "1rem", fontWeight: 700 }}>
         Experience and Education
       </Typography>
-      <Timeline>
+      <Timeline sx={{ padding: 0 }}>
         {steps.map((step) => (
           <CustomTimelineItem
             title={step.title}

@@ -18,7 +18,7 @@ let theme = createTheme({
     h2: { fontSize: "2em" },
     h3: { fontSize: "1.3em" },
     h4: { fontSize: "1em" },
-    h5: { fontSize: "1em" },
+    h5: { fontSize: "0.9em" },
     h6: { fontSize: "1em" },
     subtitle1: { fontSize: "0.9em" },
     subtitle2: { fontSize: "0.8em" },

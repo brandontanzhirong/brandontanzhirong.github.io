@@ -2,13 +2,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import {
-  Button,
-  CardActionArea,
-  CardActions,
-  Container,
-  Stack,
-} from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import awsSolutionArchitect from "../../../assets/awsSolutionArchitect.png";
 import umhackathon from "../../../assets/umhackathon.jpg";
 
@@ -72,7 +66,7 @@ const AcheivementItem = ({ title, date, img, description }) => {
 export default function Acheivements() {
   return (
     <Container id="acheivements" component="section">
-      <Typography variant="h2" sx={{ fontWeight: 700 }}>
+      <Typography variant="h2" sx={{ fontWeight: 700, margin: "1rem" }}>
         Acheivements
       </Typography>
       <Stack

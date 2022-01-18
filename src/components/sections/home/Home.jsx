@@ -77,7 +77,9 @@ export default function Home() {
           sx={{
             marginTop: "20px",
             color: "#CCCCCC",
-            mx: { xs: 0, sm: "10%" },
+            textAlign: "left",
+            width: { md: "65%" },
+            mx: { xs: 0, md: "auto" },
           }}
         >
           A student with a current CGPA of 3.98 passionate about data science
