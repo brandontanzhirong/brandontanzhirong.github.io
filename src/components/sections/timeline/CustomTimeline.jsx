@@ -8,7 +8,7 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
 import WorkOutlineRoundedIcon from "@mui/icons-material/WorkOutlineRounded";
 import Typography from "@mui/material/Typography";
-import { Container, Stack } from "@mui/material";
+import { Container, Stack, Box } from "@mui/material";
 import { TimelineOppositeContent } from "@mui/lab";
 
 const steps = [
@@ -122,13 +122,17 @@ const CustomTimelineItem = ({
             <ul>
               {description.split("\n").map((line) =>
                 !line.includes("➼") ? (
-                  <li>
+                  <Box component="li" key={line}>
                     <Typography variant="subtitle1" sx={{ fontWeight: "500" }}>
                       {line}
                     </Typography>
-                  </li>
+                  </Box>
                 ) : (
-                  <Typography variant="subtitle1" sx={{ fontWeight: "500" }}>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ fontWeight: "500" }}
+                    key={line}
+                  >
                     {line}
                   </Typography>
                 )
@@ -144,12 +148,16 @@ const CustomTimelineItem = ({
 export default function CustomTimeline() {
   return (
     <Container id="timeline" component="section" sx={{ padding: 0 }}>
-      <Typography variant="h2" sx={{ margin: "1rem", fontWeight: 700 }}>
+      <Typography
+        variant="h2"
+        sx={{ paddingTop: "3rem", paddingBottom: "1.5rem", fontWeight: 700 }}
+      >
         Experience and Education
       </Typography>
       <Timeline sx={{ padding: 0 }}>
         {steps.map((step) => (
           <CustomTimelineItem
+            key={step.title}
             title={step.title}
             result={step.result}
             place={step.place}

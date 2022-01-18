@@ -74,7 +74,11 @@ export default function Navbar() {
           </Typography>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {navItems.map((navItem) => (
-              <Button color="inherit" href={navItem.href}>
+              <Button
+                color="inherit"
+                href={navItem.href}
+                key={navItem.sectionName}
+              >
                 {navItem.sectionName}
               </Button>
             ))}

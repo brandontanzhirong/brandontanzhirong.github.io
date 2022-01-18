@@ -8,6 +8,8 @@ import {
   CardContent,
   Box,
   Container,
+  Chip,
+  useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import MobileStepper from "@mui/material/MobileStepper";
@@ -19,19 +21,20 @@ import TechStackSelection from "./TechStackSelection";
 const projectList = [
   {
     title: "Maze Runner",
-    description: "A Java project",
+    description:
+      " A 2D game with a person searching for treasure in a limited vision and finding for its exit.",
     techStack: ["Java"],
   },
   {
     title: "MyEventBrite",
     description:
       "An android apps for monitoring a private event where each valid person can only have one ticket.",
-    techStack: ["Android", "Firestore", "Kotlin"],
+    techStack: ["Android", "Firestore", "Kotlin", "Mobile App"],
   },
   {
     title: "My Digit Span",
-    description: "Flutter Apps for Digit Span",
-    techStack: ["Flutter", "Dart", "Mobile App"],
+    description: "Flutter Apps for Digit Span Memory Test",
+    techStack: ["Flutter", "Mobile App"],
   },
   {
     title: "Self Enrichment App",
@@ -47,12 +50,30 @@ const projectList = [
       "Deep Learning",
       "Microsoft Azure AutoML",
       "PowerBI",
+      "Python",
     ],
   },
   {
     title: "NotGit",
     description: "It is a clone of Git",
     techStack: ["Java"],
+  },
+  {
+    title: "Bank Chatbot",
+    description:
+      "A chatbot that uses BERT model to match user question to the most relevant question in the database.",
+    techStack: ["NLP", "Python"],
+  },
+  {
+    title: "Self Love App",
+    description:
+      "A machine learning model that can predict suitable hobbies based on one's personality.",
+    techStack: ["Machine Learning", "Deep Learning", "EDA", "Python"],
+  },
+  {
+    title: "Social Distancing Detection",
+    description: "People Detection and distance estimation between people.",
+    techStack: ["Deep Learning", "Python", "Computer Vision"],
   },
 ];
 
@@ -62,9 +83,9 @@ for (let i = 0; i < projectList.length; i++) {
     filteredTechStacks[projectList[i].techStack[j]] = false;
   }
 }
-filteredTechStacks["Java"] = true;
+filteredTechStacks["Deep Learning"] = true;
 
-const CustomCard = ({ title, description }) => {
+const CustomCard = ({ title, description, techStack }) => {
   return (
     <CardActionArea
       sx={{
@@ -131,10 +152,40 @@ const CustomCard = ({ title, description }) => {
           zIndex: 1,
           transition: "all 350ms cubic-bezier(0, 0, 0.2, 1)",
           display: "flex",
+          justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "rgba(60,179,113 ,0.8)",
+          backgroundColor: "rgba(0,0,0,0.5)",
         }}
-      ></Box>
+      >
+        <Box
+          component="ul"
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            listStyle: "none",
+            p: 0,
+            m: 0,
+          }}
+        >
+          {techStack.map((tech) => (
+            <Box
+              component="li"
+              key={tech}
+              sx={{
+                marginRight: "0.5rem",
+                marginBottom: "0.5rem",
+              }}
+            >
+              <Chip
+                label={tech.toUpperCase()}
+                size="small"
+                sx={{ fontWeight: 500, backgroundColor: "rgb(225 228 230)" }}
+              />
+            </Box>
+          ))}
+        </Box>
+      </Box>
     </CardActionArea>
   );
 };
@@ -158,9 +209,11 @@ function filterProjectList(projectList, filteredTechStacks) {
 export default function Projects() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = Math.ceil(projectList.length / 4);
   const [chipData, setChipData] = React.useState(filteredTechStacks);
+  const desktopMode = useMediaQuery(theme.breakpoints.up("md"));
   const filteredProjects = filterProjectList(projectList, chipData);
+  const numPerRow = desktopMode ? 4 : 1;
+  const maxSteps = Math.ceil(filteredProjects.length / numPerRow);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -173,7 +226,10 @@ export default function Projects() {
   return (
     <Container id="projects" component="section" sx={{ width: { md: "65%" } }}>
       <Box>
-        <Typography variant="h2" sx={{ margin: "1em", fontWeight: 700 }}>
+        <Typography
+          variant="h2"
+          sx={{ paddingTop: "3rem", paddingBottom: "1.5rem", fontWeight: 700 }}
+        >
           Projects
         </Typography>
         <TechStackSelection
@@ -201,7 +257,7 @@ export default function Projects() {
         >
           {filteredProjects.map(
             (project, index) =>
-              Math.floor(index / 4) === activeStep && (
+              Math.floor(index / numPerRow) === activeStep && (
                 <Grid
                   item
                   md={3}
@@ -211,6 +267,7 @@ export default function Projects() {
                   <CustomCard
                     title={project.title}
                     description={project.description}
+                    techStack={project.techStack}
                   />
                 </Grid>
               )

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Chip, Box, Container } from "@mui/material";
+import { Chip, Box } from "@mui/material";
 
 export default function TechStackSelection({
   chipData,
