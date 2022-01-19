@@ -75,6 +75,25 @@ const projectList = [
     description: "People Detection and distance estimation between people.",
     techStack: ["Deep Learning", "Python", "Computer Vision"],
   },
+  {
+    title: "Online Portfolio",
+    description: "Personal web-based portfolio.",
+    techStack: ["Web Development", "ReactJS", "CSS", "JavaScript", "HTML"],
+  },
+  {
+    title: "Learning-based Multi-view 3D Model Reconstruction",
+    description: "Building a 3D Model with multiple images.",
+    techStack: [
+      "Deep Learning",
+      "Python",
+      "Computer Vision",
+      "Web Development",
+      "ReactJS",
+      "CSS",
+      "JavaScript",
+      "HTML",
+    ],
+  },
 ];
 
 let filteredTechStacks = {};
@@ -126,7 +145,7 @@ const CustomCard = ({ title, description, techStack }) => {
               textTransform: "uppercase",
               fontWeight: "bold",
             }}
-            variant={"h3"}
+            variant={title.length >= 30 ? "h4" : "h3"}
           >
             {title}
           </Typography>
@@ -180,7 +199,11 @@ const CustomCard = ({ title, description, techStack }) => {
               <Chip
                 label={tech.toUpperCase()}
                 size="small"
-                sx={{ fontWeight: 500, backgroundColor: "rgb(225 228 230)" }}
+                sx={{
+                  fontSize: "0.7rem",
+                  fontWeight: 500,
+                  backgroundColor: "rgb(225 228 230)",
+                }}
               />
             </Box>
           ))}
