@@ -35,7 +35,7 @@ export default function ContactMe() {
           variant="text"
           color="inherit"
           target="_blank"
-          href="https://www.linkedin.com/in/brandon-tan-191527190"
+          href="https://www.linkedin.com/in/brandontanzhirong"
         >
           <LinkedInIcon />
         </Button>

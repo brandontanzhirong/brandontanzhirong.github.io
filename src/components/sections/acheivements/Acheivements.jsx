@@ -1,10 +1,8 @@
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Container, Stack } from "@mui/material";
 import awsSolutionArchitect from "../../../assets/awsSolutionArchitect.png";
 import umhackathon from "../../../assets/umhackathon.jpg";
+import AcheivementItem from "./AcheivementItem";
 
 const acheivements = [
   {
@@ -23,46 +21,6 @@ const acheivements = [
     and showcased our prototype in the form of PowerBI with the help of prototyping tool(Streamlit).`,
   },
 ];
-
-const AcheivementItem = ({ title, date, img, description }) => {
-  return (
-    <Card
-      sx={{
-        boxShadow: "0 8px 16px 0 #BDC9D7",
-        marginBottom: "2rem",
-        mx: "2rem",
-        maxWidth: 450,
-        borderRadius: "1.5rem",
-        textAlign: "center",
-      }}
-    >
-      <CardMedia
-        component="img"
-        image={img}
-        alt={title}
-        sx={{
-          width: "60%",
-          margin: "auto",
-        }}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h3" sx={{ fontWeight: 700 }}>
-          {title}
-        </Typography>
-        <Typography gutterBottom variant="h4" sx={{ fontWeight: 500 }}>
-          {date}
-        </Typography>
-        <Typography
-          variant="subtitle2"
-          color="inherit"
-          sx={{ fontWeight: 400 }}
-        >
-          {description}
-        </Typography>
-      </CardContent>
-    </Card>
-  );
-};
 
 export default function Acheivements() {
   return (

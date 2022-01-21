@@ -1,22 +1,12 @@
 import React from "react";
-import Color from "color";
-import {
-  Typography,
-  Grid,
-  CardActionArea,
-  Card,
-  CardContent,
-  Box,
-  Container,
-  Chip,
-  useMediaQuery,
-} from "@mui/material";
+import { Typography, Grid, Box, Container, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import MobileStepper from "@mui/material/MobileStepper";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import TechStackSelection from "./TechStackSelection";
+import CustomProjectCard from "./CustomProjectCard";
 
 const projectList = [
   {
@@ -24,27 +14,31 @@ const projectList = [
     description:
       " A 2D game with a person searching for treasure in a limited vision and finding for its exit.",
     techStack: ["Java"],
+    githubLink: "https://github.com/brandontanzhirong/MazeRunner",
   },
   {
     title: "MyEventBrite",
     description:
       "An android apps for monitoring a private event where each valid person can only have one ticket.",
-    techStack: ["Android", "Firestore", "Kotlin", "Mobile App"],
+    techStack: ["Android", "Firebase", "Kotlin", "Mobile App"],
+    githubLink: "https://github.com/brandontanzhirong/MyEventBrite",
   },
   {
     title: "My Digit Span",
     description: "Flutter Apps for Digit Span Memory Test",
     techStack: ["Flutter", "Mobile App"],
+    githubLink: "https://github.com/brandontanzhirong/My_Digit_Span",
   },
   {
     title: "Self Enrichment App",
     description:
       "An android App that helps people to improve mentally and physically",
-    techStack: ["Flutter", "Dart", "Mobile App"],
+    techStack: ["Android", "Firebase", "Java", "Mobile App"],
+    githubLink: "https://github.com/brandontanzhirong/Self-Enrichment_App",
   },
   {
     title: "Bond Price Forecasting",
-    description: "Forcast next month's bond price given current month details",
+    description: "Forecast next month's bond price given current month details",
     techStack: [
       "Finance",
       "Deep Learning",
@@ -52,33 +46,48 @@ const projectList = [
       "PowerBI",
       "Python",
     ],
+    githubLink: "https://github.com/brandontanzhirong/bond-price-forcasting",
   },
   {
     title: "NotGit",
     description: "It is a clone of Git",
     techStack: ["Java"],
+    githubLink: "https://github.com/brandontanzhirong/NotGit",
   },
   {
     title: "Bank Chatbot",
     description:
       "A chatbot that uses BERT model to match user question to the most relevant question in the database.",
     techStack: ["NLP", "Python"],
+    githubLink: "https://github.com/brandontanzhirong/NLP-bank-chatbot",
   },
   {
     title: "Self Love App",
     description:
       "A machine learning model that can predict suitable hobbies based on one's personality.",
     techStack: ["Machine Learning", "Deep Learning", "EDA", "Python"],
+    githubLink: "https://github.com/brandontanzhirong/Self_Love_App",
   },
   {
     title: "Social Distancing Detection",
     description: "People Detection and distance estimation between people.",
     techStack: ["Deep Learning", "Python", "Computer Vision"],
+    githubLink:
+      "https://github.com/brandontanzhirong/Social_Distancing_Detection",
   },
   {
     title: "Online Portfolio",
     description: "Personal web-based portfolio.",
-    techStack: ["Web Development", "ReactJS", "CSS", "JavaScript", "HTML"],
+    techStack: [
+      "Web Development",
+      "ReactJS",
+      "CSS",
+      "JavaScript",
+      "HTML",
+      "Material UI",
+    ],
+    githubLink:
+      "https://github.com/brandontanzhirong/brandontanzhirong.github.io",
   },
   {
     title: "Learning-based Multi-view 3D Model Reconstruction",
@@ -93,6 +102,8 @@ const projectList = [
       "JavaScript",
       "HTML",
     ],
+    githubLink:
+      "https://github.com/brandontanzhirong/Learning-based-Multi-view-3D-Model-Reconstruction",
   },
 ];
 
@@ -103,115 +114,6 @@ for (let i = 0; i < projectList.length; i++) {
   }
 }
 filteredTechStacks["Deep Learning"] = true;
-
-const CustomCard = ({ title, description, techStack }) => {
-  return (
-    <CardActionArea
-      sx={{
-        width: "100%",
-        borderRadius: "1.5rem",
-        transition: "0.2s",
-        "&:hover": {
-          transform: "scale(1.1)",
-          ".overlay-tech-stack": { top: 0 },
-        },
-        overflow: "hidden",
-      }}
-    >
-      <Card
-        sx={{
-          width: "100%",
-          height: "200px",
-          boxShadow: "none",
-          "&:hover": {
-            boxShadow: `0 6px 12px 0 ${Color("#203f52")
-              .rotate(-12)
-              .darken(0.2)
-              .fade(0.5)}`,
-          },
-        }}
-      >
-        <CardContent
-          sx={{
-            backgroundColor: "#203f52",
-            height: "100%",
-            textAlign: "left",
-            p: "15%",
-          }}
-        >
-          <Typography
-            sx={{
-              color: "#fff",
-              textTransform: "uppercase",
-              fontWeight: "bold",
-            }}
-            variant={title.length >= 30 ? "h4" : "h3"}
-          >
-            {title}
-          </Typography>
-          <Typography
-            variant={"subtitle1"}
-            sx={{
-              color: "#fff",
-              marginTop: "0.2rem",
-            }}
-          >
-            {description}
-          </Typography>
-        </CardContent>
-      </Card>
-      <Box
-        className="overlay-tech-stack"
-        sx={{
-          position: "absolute",
-          left: 0,
-          top: "100%",
-          width: "100%",
-          height: "100%",
-          zIndex: 1,
-          transition: "all 350ms cubic-bezier(0, 0, 0.2, 1)",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "rgba(0,0,0,0.5)",
-        }}
-      >
-        <Box
-          component="ul"
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            listStyle: "none",
-            p: 0,
-            m: 0,
-          }}
-        >
-          {techStack.map((tech) => (
-            <Box
-              component="li"
-              key={tech}
-              sx={{
-                marginRight: "0.5rem",
-                marginBottom: "0.5rem",
-              }}
-            >
-              <Chip
-                label={tech.toUpperCase()}
-                size="small"
-                sx={{
-                  fontSize: "0.7rem",
-                  fontWeight: 500,
-                  backgroundColor: "rgb(225 228 230)",
-                }}
-              />
-            </Box>
-          ))}
-        </Box>
-      </Box>
-    </CardActionArea>
-  );
-};
 
 function filterProjectList(projectList, filteredTechStacks) {
   let filteredProjectList = [];
@@ -287,10 +189,11 @@ export default function Projects() {
                   key={project.title}
                   sx={{ width: { xs: "65%", md: "100%" } }}
                 >
-                  <CustomCard
+                  <CustomProjectCard
                     title={project.title}
                     description={project.description}
                     techStack={project.techStack}
+                    githubLink={project.githubLink}
                   />
                 </Grid>
               )
