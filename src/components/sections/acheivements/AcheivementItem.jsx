@@ -9,7 +9,6 @@ export default function AcheivementItem({ title, date, img, description }) {
         mx: "2rem",
         maxWidth: 450,
         borderRadius: "1.5rem",
-        textAlign: "center",
       }}
     >
       <CardMedia

@@ -10,7 +10,12 @@ import {
 import Color from "color";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-export default function CustomProjectCard({ title, description, techStack, githubLink }) {
+export default function CustomProjectCard({
+  title,
+  description,
+  techStack,
+  githubLink,
+}) {
   return (
     <CardActionArea
       sx={{

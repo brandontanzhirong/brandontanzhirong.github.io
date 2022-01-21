@@ -33,7 +33,11 @@ export default function Acheivements() {
       </Typography>
       <Stack
         direction={{ xs: "column", md: "row" }}
-        sx={{ textAlign: "left", justifyContent: "space-evenly" }}
+        sx={{
+          textAlign: "center",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+        }}
       >
         {acheivements.map((acheivement) => (
           <AcheivementItem
