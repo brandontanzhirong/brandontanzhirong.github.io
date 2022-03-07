@@ -16,7 +16,7 @@ export default function AcheivementItem({ title, date, img, description }) {
         image={img}
         alt={title}
         sx={{
-          width: "60%",
+          width: "50%",
           margin: "auto",
         }}
       />

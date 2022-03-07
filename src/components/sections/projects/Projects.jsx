@@ -58,7 +58,7 @@ const projectList = [
     title: "Bank Chatbot",
     description:
       "A chatbot that uses BERT model to match user question to the most relevant question in the database.",
-    techStack: ["NLP", "Python"],
+    techStack: ["NLP", "Python", "Deep Learning", "BERT"],
     githubLink: "https://github.com/brandontanzhirong/NLP-bank-chatbot",
   },
   {
@@ -104,6 +104,22 @@ const projectList = [
     ],
     githubLink:
       "https://github.com/brandontanzhirong/Learning-based-Multi-view-3D-Model-Reconstruction",
+  },
+  {
+    title: "Identity Verification with Masked Face",
+    description:
+      "Transfer Learning by retraining the pre-trained FaceNet on vggface2 with Real-World-Masked-Face-Dataset",
+    techStack: ["Deep Learning", "Python", "Computer Vision"],
+    githubLink:
+      "https://github.com/brandontanzhirong/Identity-Verification-with-Masked-Face",
+  },
+  {
+    title: "Deep Learning-based Paraphrase Generation",
+    description:
+      "Paraphrasing tool finetuned on pre-trained T5 model with Quora Question Pairs",
+    techStack: ["Deep Learning", "Python", "NLP", "T5", "TensorBoard"],
+    githubLink:
+      "https://github.com/brandontanzhirong/paraphrasing-tool_t5-finetuned-QQP",
   },
 ];
 

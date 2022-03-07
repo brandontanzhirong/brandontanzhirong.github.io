@@ -11,23 +11,25 @@ const steps = [
     isEducation: false,
     startDate: "Jul 2020",
     endDate: "Jan 2021",
-    description: `Theft Detection in a CCTV footage with a pre-trained MobileNet SSD model
-    People counter in a shop in a day by detecting people with pre-trained MobileNet SSD model and tracking them using correlation filter and centroid tracking
+    description: `Developed theft detection in a CCTV footage with a pre-trained MobileNet SSD model 
+    Implemented people counter in a shop in a day by detecting people with pre-trained MobileNet SSD model and tracking them using correlation filter and centroid tracking
     Utilize several AWS services to complete the task using Python as the Programming Language such as:
     ➼ ECS (Elastic Container Service), ELB (Elastic Load Balancer) and API Gateway to be able to run the code with 0 Cold Start time
     ➼ S3, AWS Glue and AWS Firehose to able to query the log using AWS Athena
     ➼ AWS EC2 and AWS X-Ray to run the cron job (batch job)
     ➼ AWS SES (Simple Email Service) to send email to alert the recipient when a certain event occurs
-    ➼ AWS CodeCommit and AWS CodePipeline to perform CI/CD operations`,
+    ➼ AWS CodeCommit and AWS CodePipeline to perform CI/CD operations
+    ➼ AWS Lambda and AWS Elasticsearch to retrieve a list of filtered products`,
   },
   {
-    title: "Teaching Assistant (Fundamental of Programming & Data Structure)",
+    title: "Teaching Assistant (Java)",
+    result: "Fundamental of Programming & Data Structure",
     place: "University of Malaya",
     isEducation: false,
     startDate: "Sep 2019",
     endDate: "Jun 2020",
-    description: `Explain the lab questions to the students 
-    Provide guidance to students when they need help`,
+    description: `Explained the weekly lab questions to a class of students 
+    Provided guidance to the students when they needed assistance`,
   },
   {
     title: "Bachelor of Computer Science (Artificial Intelligence)",

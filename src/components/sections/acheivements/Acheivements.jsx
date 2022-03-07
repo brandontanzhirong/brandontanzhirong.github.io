@@ -2,6 +2,7 @@ import Typography from "@mui/material/Typography";
 import { Container, Stack } from "@mui/material";
 import awsSolutionArchitect from "../../../assets/awsSolutionArchitect.png";
 import umhackathon from "../../../assets/umhackathon.jpg";
+import microsoftDA100 from "../../../assets/microsoftDA100.png";
 import AcheivementItem from "./AcheivementItem";
 
 const acheivements = [
@@ -20,6 +21,14 @@ const acheivements = [
     We trained a model to predict the next month's bond price given the current month's details by employing Microsoft Azure AutoML 
     and showcased our prototype in the form of PowerBI with the help of prototyping tool(Streamlit).`,
   },
+  {
+    title: "Microsoft Certified: Power BI Data Analyst Associate",
+    date: "Issued Mar 2022 - Expires Mar 2023",
+    img: microsoftDA100,
+    description: `On Feb 2022, I attended a 4 days of DA-100 : Analysing Data with Power BI course with Trainocate Malaysia.
+    From the training programme, I was given a free exam voucher to take the exam.
+    After a week of practices, I passed the exam with flying colour.`,
+  },
 ];
 
 export default function Acheivements() {
@@ -37,6 +46,7 @@ export default function Acheivements() {
           textAlign: "center",
           justifyContent: "space-evenly",
           alignItems: "center",
+          flexWrap: "wrap",
         }}
       >
         {acheivements.map((acheivement) => (
