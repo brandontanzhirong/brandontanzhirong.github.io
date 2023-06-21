@@ -73,31 +73,7 @@ const steps = [
     Volleyball (4th Place in intra-university)
     Dayao UM (Multech)
     Pesta Tanglung UM (Multimedia)`,
-  },
-  {
-    title: "Local Matriculation (Science Stream)",
-    result: "CGPA4.00",
-    place: "Kolej Matrikulasi Johor (KMJ)",
-    isEducation: true,
-    startDate: "2017",
-    endDate: "2018",
-    description: `Volleyball (Team Captain & 3rd place in inter-college competition)
-    Class monitor
-    Assistant head of Block A first floor 
-    Fun Fair Drinks Department
-    Performer (Wushu)`,
-  },
-  {
-    title: "SPM (Science Stream)",
-    result: "6A+ 3A 1A- 1B+",
-    place: "SMK Bandar Sri Damansara 1",
-    isEducation: true,
-    startDate: "2011",
-    endDate: "2016",
-    description: `Red Crescent Society - Vice President
-    Red Crescent Camp - Organizer
-    Green House Marching - Commander`,
-  },
+  }
 ];
 
 export default function CustomTimeline() {
