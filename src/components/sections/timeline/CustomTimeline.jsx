@@ -6,6 +6,32 @@ import CustomTimelineItem from "./CustomTimelineItem";
 
 const steps = [
   {
+    title: "Data Engineer/Scientist",
+    place: "Singapore Telecommunications Limited (Singtel)",
+    isEducation: false,
+    startDate: "Jul 2023",
+    endDate: "Present",
+    description: `Mobile Network Analytics to generate insight and analysis report on demand 
+    Implemented Data Quality Monitoring System with Time Series Anomaly Detection Capability using Tableau and Prophet Model to automate daily operation health check process
+    Designed and transformed the raw data to create an aggregated data for general use to reduce the computation resource usage and time for analysis such as:
+    ➼	ML integrated Algorithm to predict customers’ work and home locations 
+    ➼	Customer Experience Score in term of data and video on different level of granularity
+    ➼	Complete Mobile Customer Profile 
+    ➼	Built the ETL data pipeline to send out the transformed data to other business units
+    Collaborated with several stakeholders from various departments to work on an automated complaint resolver project`,
+  },
+  {
+    title: "AI Research Scientist",
+    place: "Fusionex Group",
+    isEducation: false,
+    startDate: "May 2023",
+    endDate: "Jul 2023",
+    description: `Built a blood test semi-automation system 
+    ➼	Trained a deep learning classification model to identify good tiles from a whole slide image
+    ➼	Segmented red and white blood cells from the medical image with the use of image processing techniques
+    ➼	Annotated instance segmentation data for white blood cell and classification data for good tile and bad tile`,
+  },
+  {
     title: "Data Engineer Intern",
     place: "Axrail Pte. Ltd.",
     isEducation: false,

@@ -67,9 +67,7 @@ export default function Home() {
             fontWeight: "100",
           }}
         >
-          Final Year Undergraduate
-          <br />
-          Artificial Intelligence Department, University of Malaya
+          Data Engineer/Scientist
         </Typography>
         <hr />
         <Typography
@@ -82,10 +80,10 @@ export default function Home() {
             mx: { xs: 0, md: "auto" },
           }}
         >
-          A student with a current CGPA of 3.98 passionate about data science
-          and machine learning. Experienced in AWS Cloud Services, had an
-          internship in a fast-paced AWS Advanced Consulting Partner company and
-          passed AWS Certified Solutions Architect – Associate exam.
+          A Data Engineer/Scientist with exposure on data science and data engineering in one of the biggest company in Singapore. 
+          Experienced in AWS Cloud Services, had an internship in a fast-paced AWS Advanced Consulting Partner company and
+          passed AWS Certified Solutions Architect – Associate exam. Also, with passion on AWS Cloud Computing Technology,
+          took the initiative to take and pass AWS Certified Data Analytics - Specialty exam in 2023.
         </Typography>
       </Container>
       <Button

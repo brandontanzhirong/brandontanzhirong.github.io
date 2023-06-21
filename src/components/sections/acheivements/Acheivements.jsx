@@ -1,6 +1,7 @@
 import Typography from "@mui/material/Typography";
 import { Container, Stack } from "@mui/material";
 import awsSolutionArchitect from "../../../assets/awsSolutionArchitect.png";
+import awsDataAnalytics from "../../../assets/awsDataAnalytics.png";
 import umhackathon from "../../../assets/umhackathon.jpg";
 import microsoftDA100 from "../../../assets/microsoftDA100.png";
 import AcheivementItem from "./AcheivementItem";
@@ -28,6 +29,13 @@ const acheivements = [
     description: `On Feb 2022, I attended a 4 days of DA-100 : Analysing Data with Power BI course with Trainocate Malaysia.
     From the training programme, I was given a free exam voucher to take the exam.
     After a week of practices, I passed the exam with flying colour.`,
+  },
+  {
+    title: "AWS Certified Data Analytics - Specialty",
+    date: "Issued Jun 2023 - Expires Jun 2026",
+    img: awsDataAnalytics,
+    description: `I spent 2-3 months to study for this exam while coping with my current job workload.
+    In the end, I passed the exam and learnt a lot on big data in the cloud environment.`,
   },
 ];
 
