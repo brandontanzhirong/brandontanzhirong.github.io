@@ -11,14 +11,14 @@ const steps = [
     isEducation: false,
     startDate: "Jul 2023",
     endDate: "Present",
-    description: `Mobile Network Analytics to generate insight and analysis report on demand 
-    Implemented Data Quality Monitoring System with Time Series Anomaly Detection Capability using Tableau and Prophet Model to automate daily operation health check process
-    Designed and transformed the raw data to create an aggregated data for general use to reduce the computation resource usage and time for analysis such as:
+    description: `Designed and built ETL data pipeline to transform and aggregate raw data for general use to reduce the computation resource usage and time for analysis such as:
     ➼	ML integrated Algorithm to predict customers’ work and home locations 
     ➼	Customer Experience Score in term of data and video on different level of granularity
     ➼	Complete Mobile Customer Profile 
-    ➼	Built the ETL data pipeline to send out the transformed data to other business units
-    Collaborated with several stakeholders from various departments to work on an automated complaint resolver project`,
+    Gathered user requirement based on the use case and built the ETL data pipeline to transfer the transformed data in parquet format to the users through SFTP or email
+    Implemented automated data quality monitoring system with ML anomaly detection capability and email alert upon anomaly detected on Tableau dashboard and continuously improving based on the user feedbacks for a better user experience, scalability and reduced poor data quality detection time
+    Architected and defined the graph schema on graph database to analyse the data using Graph SQL to query complex relationships between different entities
+    Prepared and analysed mobile network data to generate requested insight and analysis report on demand to help management to make a data-driven decision`,
   },
   {
     title: "AI Research Scientist",

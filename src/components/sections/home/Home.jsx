@@ -80,7 +80,7 @@ export default function Home() {
             mx: { xs: 0, md: "auto" },
           }}
         >
-          A Data Engineer/Scientist with exposure on data science and data engineering in one of the biggest company in Singapore. 
+          A Data Engineer/Scientist with exposure on data science and data engineering in one of the biggest companies in Singapore. 
           Experienced in AWS Cloud Services, had an internship in a fast-paced AWS Advanced Consulting Partner company and
           passed AWS Certified Solutions Architect – Associate exam. Also, with passion on AWS Cloud Computing Technology,
           took the initiative to take and pass AWS Certified Data Analytics - Specialty exam in 2023.
