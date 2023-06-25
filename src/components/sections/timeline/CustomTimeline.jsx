@@ -11,11 +11,11 @@ const steps = [
     isEducation: false,
     startDate: "Jul 2023",
     endDate: "Present",
-    description: `Designed and built ETL data pipeline to transform and aggregate raw data for general use to reduce the computation resource usage and time for analysis such as:
+    description: `Conducted data modelling and built ETL data pipeline to transform and aggregate raw data for general use to reduce the computation resource usage and time for analysis such as:
     ➼	ML integrated Algorithm to predict customers’ work and home locations 
     ➼	Customer Experience Score in term of data and video on different level of granularity
     ➼	Complete Mobile Customer Profile 
-    Gathered user requirement based on the use case and built the ETL data pipeline to transfer the transformed data in parquet format to the users through SFTP or email
+    Designed the schema based on the use case and built ETL data pipeline to transfer the transformed data in parquet format to the users through SFTP or email
     Implemented automated data quality monitoring system with ML anomaly detection capability and email alert upon anomaly detected on Tableau dashboard and continuously improving based on the user feedbacks for a better user experience, scalability and reduced poor data quality detection time
     Architected and defined the graph schema on graph database to analyse the data using Graph SQL to query complex relationships between different entities
     Prepared and analysed mobile network data to generate requested insight and analysis report on demand to help management to make a data-driven decision`,
