@@ -11,14 +11,16 @@ const steps = [
     isEducation: false,
     startDate: "Jul 2023",
     endDate: "Present",
-    description: `Conducted data modelling and built ETL data pipeline to transform and aggregate raw data for general use to reduce the computation resource usage and time for analysis such as:
-    ➼	ML integrated Algorithm to predict customers’ work and home locations 
-    ➼	Customer Experience Score in term of data and video on different level of granularity
-    ➼	Complete Mobile Customer Profile 
-    Designed the schema based on the use case and built ETL data pipeline to transfer the transformed data in parquet format to the users through SFTP or email
-    Implemented automated data quality monitoring system with ML anomaly detection capability and email alert upon anomaly detected on Tableau dashboard and continuously improving based on the user feedbacks for a better user experience, scalability and reduced poor data quality detection time
-    Architected and defined the graph schema on graph database to analyse the data using Graph SQL to query complex relationships between different entities
-    Prepared and analysed mobile network data to generate requested insight and analysis report on demand to help management to make a data-driven decision`,
+    description: `Built and maintained 10+ ETL data pipelines to transform billions of raw records from several data sources using PySpark and feed the data to the marketing team for campaign purposes
+    Implemented ML monitoring system to proactively address data quality issues that reduced the response time to 1 hour
+    Integrated third party OAuth mechanism in a Java Spring Boot API to remove manual token generation
+    Deployed a Java application from on-premises to OpenShift Container Platform through Jenkins CI/CD pipeline to ensure isolated environment between applications 
+    Automated basic email reports with Apache Airflow which saved 1 hour of manual work each day
+    Modified the graph schema on graph database to analyse the data using Graph SQL in a unified viewthat reduce the analysis time by 2 hours
+    Prepared, understand and analysed data from 20+ data sources with Tableau to identify trend and draw insights
+    Discussed with project manager and analysts for data modelling in 10+ domains that boost the time inanalysis by 50% 
+    Collaborated with 2 cross-functional teams to understand and solve the root cause of the customer complaints 
+    Documented the data dictionaries, domain knowledge and business logic of the data models`  
   },
   {
     title: "AI Research Scientist",
