@@ -6,6 +6,15 @@ import CustomTimelineItem from "./CustomTimelineItem";
 
 const steps = [
   {
+    title: "API Developer",
+    place: "Singapore Telecommunications Limited (Singtel)",
+    isEducation: false,
+    startDate: "Aug 2023",
+    endDate: "Present",
+    description: `Enhanced existing Java Spring Boot API by integrating third party OAuth Mechanism and implementing circuit breaker pattern for the resilience of the microservice
+    Deployed a Java Kubernetes application on OpenShift Container Platform through Jenkins CI/CD pipeline and Helm Charts`  
+  },
+  {
     title: "Data Engineer/Scientist",
     place: "Singapore Telecommunications Limited (Singtel)",
     isEducation: false,
@@ -13,12 +22,10 @@ const steps = [
     endDate: "Present",
     description: `Built and maintained 10+ ETL data pipelines to transform billions of raw records from several data sources using PySpark and feed the data to the marketing team for campaign purposes
     Implemented ML monitoring system to proactively address data quality issues that reduced the response time to 1 hour
-    Integrated third party OAuth mechanism in a Java Spring Boot API to remove manual token generation
-    Deployed a Java application from on-premises to OpenShift Container Platform through Jenkins CI/CD pipeline to ensure isolated environment between applications 
     Automated basic email reports with Apache Airflow which saved 1 hour of manual work each day
-    Modified the graph schema on graph database to analyse the data using Graph SQL in a unified viewthat reduce the analysis time by 2 hours
+    Modified the graph schema on graph database to analyse the data using Graph SQL in a unified view that reduce the analysis time by 2 hours
     Prepared, understand and analysed data from 20+ data sources with Tableau to identify trend and draw insights
-    Discussed with project manager and analysts for data modelling in 10+ domains that boost the time inanalysis by 50% 
+    Discussed with project manager and analysts for data modelling in 10+ domains that boost the time in analysis by 50% 
     Collaborated with 2 cross-functional teams to understand and solve the root cause of the customer complaints 
     Documented the data dictionaries, domain knowledge and business logic of the data models`  
   },
